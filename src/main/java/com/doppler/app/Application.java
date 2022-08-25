@@ -46,11 +46,8 @@ public class Application {
             System.out.println("Spring Config {\n" +
                     "  spring.application.name: '" + env.getProperty("spring.application.name") + '\'' +
                     ",\n  server.address: '" + env.getProperty("server.address") + '\'' +
-                    ",\n  server.port: " + env.getProperty("server.port") +
                     ",\n  debug: " + env.getProperty("debug") +
                     "\n}");
-
-            System.out.format("\nServer running at http://%s:%s/\n", env.getProperty("server.address"), env.getProperty("server.port"));
         };
     }
 }

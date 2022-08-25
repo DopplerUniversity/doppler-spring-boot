@@ -1,0 +1,4 @@
+setup:
+    project: spring-boot-app
+    config: dev
+v

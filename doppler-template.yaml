@@ -26,7 +26,6 @@ projects:
         REDIS_PORT: '6379'
         REDIS_USER: 'app-01'
         SERVER_ADDRESS: '0.0.0.0'
-        SERVER_PORT: '9090'
         SPRING_APPLICATION_NAME: '${APP_APPLICATION_NAME}'
       stg:
         APP_APPLICATION_NAME: 'Doppler Spring Boot App'
@@ -39,7 +38,6 @@ projects:
         REDIS_PORT: '6379'
         REDIS_USER: 'app-01'
         SERVER_ADDRESS: '0.0.0.0'
-        SERVER_PORT: '9090'
         SPRING_APPLICATION_NAME: '${APP_APPLICATION_NAME}'
       prd:
         APP_APPLICATION_NAME: 'Doppler Spring Boot App'
@@ -52,5 +50,4 @@ projects:
         REDIS_PORT: '6379'
         REDIS_USER: 'app-01'
         SERVER_ADDRESS: '0.0.0.0'
-        SERVER_PORT: '9090'
         SPRING_APPLICATION_NAME: '${APP_APPLICATION_NAME}'

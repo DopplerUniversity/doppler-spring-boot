@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doppler-spring-boot
+  annotations:
+    # The Operator's real superpower
+    secrets.doppler.com/reload: 'true'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doppler-spring-boot
+  template:
+    metadata:
+      labels:
+        app: doppler-spring-boot
+    spec:
+      containers:
+        - name: doppler-spring-boot
+          image: doppler/spring-boot-app
+          imagePullPolicy: IfNotPresent
+
+          # envFrom injects all secret values as environment variables
+          envFrom:
+            - secretRef:
+                # Operator created secret
+                name: spring-boot-app-secret
+
+          ports:
+            - name: app
+              containerPort: 8080
+
+          resources:
+            requests:
+              memory: '1024Mi'
+              cpu: '250m'
+            limits:
+              memory: '1024Mi'
+              cpu: '500m'
